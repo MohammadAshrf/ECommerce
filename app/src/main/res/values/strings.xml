@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ECommerce</string>
+    <string name="home">Home</string>
+    <string name="categories">Categories</string>
+    <string name="heart">Heart</string>
+    <string name="user">User</string>
+    <string name="what_do_you_search_for">What do you search for?</string>
+    <string name="categories_text">Categories</string>
+    <string name="view_all">view all</string>
+    <string name="men_fashion">Men\'s</string>
+    <string name="home_appliance">Home Appliance</string>
+    <string name="clothes">Clothes</string>
 </resources>
