@@ -19,10 +19,10 @@ class HomeActivity : AppCompatActivity() {
         val view = viewBinding.root
         setContentView(view)
 
-        viewBinding.content.bottomNav.itemIconTintList = null
+        viewBinding.bottomNav.itemIconTintList = null
 
 
-        viewBinding.content.bottomNav.setOnItemSelectedListener { item ->
+        viewBinding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
                     showTabFragment(HomeFragment())
@@ -43,7 +43,7 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
-        viewBinding.content.bottomNav.selectedItemId = R.id.nav_home
+        viewBinding.bottomNav.selectedItemId = R.id.nav_home
     }
 
     private fun showTabFragment(fragment: Fragment) {
