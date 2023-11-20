@@ -87,18 +87,18 @@ class HomeFragment : Fragment() {
         viewBinding.rvCategories.adapter = categoryAdapter
 
         val homeAppItems = listOf(
-            GridItem(R.drawable.clothes ,"Item 1"),
-            GridItem(R.drawable.clothes ,"Item 2"),
-            GridItem(R.drawable.clothes ,"Item 3"),
-            GridItem(R.drawable.clothes ,"Item 5"),
-            GridItem(R.drawable.clothes,"Item 6"),
-            GridItem(R.drawable.clothes ,"Item 7"),
-            GridItem(R.drawable.clothes ,"Item 8"),
-            GridItem(R.drawable.clothes ,"Item 9"),
-            GridItem(R.drawable.clothes ,"Item 10"),
-            GridItem(R.drawable.clothes ,"Item 11"),
-            GridItem(R.drawable.clothes ,"Item 12"),
-            GridItem(R.drawable.clothes ,"Item 13"),
+            GridItem(R.drawable.washer, "Item 1"),
+            GridItem(R.drawable.washer, "Item 2"),
+            GridItem(R.drawable.washer, "Item 3"),
+            GridItem(R.drawable.washer, "Item 5"),
+            GridItem(R.drawable.washer, "Item 6"),
+            GridItem(R.drawable.washer, "Item 7"),
+            GridItem(R.drawable.washer, "Item 8"),
+            GridItem(R.drawable.washer, "Item 9"),
+            GridItem(R.drawable.washer, "Item 10"),
+            GridItem(R.drawable.washer, "Item 11"),
+            GridItem(R.drawable.washer, "Item 12"),
+            GridItem(R.drawable.washer, "Item 13"),
 
             // Add more items as needed
         )

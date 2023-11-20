@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:orientation="horizontal"
-    tools:context=".ui.HomeActivity">
+    tools:context=".ui.home.HomeActivity">
 
 
     <androidx.cardview.widget.CardView
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/black"
-            android:src="@drawable/clothes" />
+            android:src="@drawable/washer" />
 
     </androidx.cardview.widget.CardView>
 

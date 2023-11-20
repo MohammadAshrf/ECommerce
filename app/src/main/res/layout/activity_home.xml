@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ecommerce.ui.HomeActivity">
+    tools:context="com.example.ecommerce.ui.home.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -80,6 +80,7 @@
         android:background="@drawable/nav_background_curved"
         app:itemActiveIndicatorStyle="@null"
         app:itemIconSize="25dp"
+
         app:menu="@menu/home_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

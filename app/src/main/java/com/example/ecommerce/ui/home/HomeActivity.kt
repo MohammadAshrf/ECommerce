@@ -1,7 +1,9 @@
-package com.example.ecommerce.ui
+package com.example.ecommerce.ui.home
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.ActivityHomeBinding
@@ -20,7 +22,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
 
         viewBinding.bottomNav.itemIconTintList = null
-
 
         viewBinding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -47,10 +48,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showTabFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
+        supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
     }
-
 }

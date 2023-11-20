@@ -10,6 +10,7 @@ class HomeAppGridAdapter(private val items: List<GridItem>) : RecyclerView.Adapt
     inner class ViewHolder(private val binding: ItemHomeApplianceGridBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: GridItem) {
             binding.homeApplianceGridText.text = item.text
+
         }
     }
 
