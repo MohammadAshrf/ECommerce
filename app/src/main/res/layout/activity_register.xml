@@ -41,24 +41,23 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="@string/enter_your_full_name"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
             app:boxCornerRadiusTopEnd="16dp"
             app:boxCornerRadiusTopStart="16dp"
-            app:hintTextColor="#007BB0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fullNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:hint="@string/enter_your_full_name"
                 android:maxLines="1"
+                android:inputType="textPersonName"
                 android:textColor="@color/black"
+                android:textColorHint="@color/grey"
                 tools:ignore="KeyboardInaccessibleWidget" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -79,21 +78,24 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="@string/enter_your_mobile_no"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
             app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp">
+            app:boxCornerRadiusTopStart="16dp"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/mobileNoEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:hint="@string/enter_your_mobile_no"
+                android:inputType="phone"
                 android:maxLines="1"
                 android:textColor="@color/black"
-                tools:text="long long long long long long text text" />
+                android:textColorHint="@color/grey"
+                tools:ignore="KeyboardInaccessibleWidget" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,23 +115,23 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="@string/enter_your_email_address"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
             app:boxCornerRadiusTopEnd="16dp"
             app:boxCornerRadiusTopStart="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:hint="@string/enter_your_email_address"
                 android:maxLines="1"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/black"
+                android:textColorHint="@color/grey"
                 tools:ignore="KeyboardInaccessibleWidget" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -150,23 +152,23 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="@string/enter_your_password"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
             app:boxCornerRadiusTopEnd="16dp"
             app:boxCornerRadiusTopStart="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:hint="@string/enter_your_password"
                 android:maxLines="1"
                 android:textColor="@color/black"
+                android:inputType="textPassword"
+                android:textColorHint="@color/grey"
                 tools:ignore="KeyboardInaccessibleWidget" />
 
         </com.google.android.material.textfield.TextInputLayout>

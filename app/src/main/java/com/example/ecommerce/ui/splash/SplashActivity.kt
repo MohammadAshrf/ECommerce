@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.ecommerce.R
 import com.example.ecommerce.ui.home.HomeActivity
+import com.example.ecommerce.ui.login.LoginActivity
 import com.example.ecommerce.ui.register.RegisterActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -21,6 +22,6 @@ class SplashActivity : AppCompatActivity() {
             .postDelayed({
                 val intent = Intent(this, RegisterActivity::class.java)
                 startActivity(intent)
-            }, 1500)
+            }, 1000)
     }
 }
