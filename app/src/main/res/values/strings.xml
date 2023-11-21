@@ -32,4 +32,7 @@
     <string name="egp_1_200">EGP 1.200</string>
     <string name="egp_1_500">EGP 1.500</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="address">Address</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="welcome_mohammad">Welcome, Mohammad</string>
 </resources>

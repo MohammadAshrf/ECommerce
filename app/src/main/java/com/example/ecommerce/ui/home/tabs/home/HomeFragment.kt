@@ -9,6 +9,7 @@ import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentHomeBinding
 import com.smarteist.autoimageslider.SliderView
 
+
 class HomeFragment : Fragment() {
     private lateinit var viewBinding: FragmentHomeBinding
 
@@ -16,7 +17,7 @@ class HomeFragment : Fragment() {
     private lateinit var imageUrl: ArrayList<String>
 
     // on below line we are creating a variable for our slider view.
-    private lateinit var sliderView : SliderView
+    private lateinit var sliderView: SliderView
 
     // on below line we are creating a variable for our slider adapter.
     private lateinit var sliderAdapter: SliderAdapter
@@ -68,18 +69,18 @@ class HomeFragment : Fragment() {
 
 
         val categoryItems = listOf(
-            GridItem(R.drawable.men ,"Item 1"),
-            GridItem(R.drawable.men ,"Item 2"),
-            GridItem(R.drawable.men ,"Item 3"),
-            GridItem(R.drawable.men ,"Item 5"),
-            GridItem(R.drawable.men ,"Item 6"),
-            GridItem(R.drawable.men ,"Item 7"),
-            GridItem(R.drawable.men ,"Item 8"),
-            GridItem(R.drawable.men ,"Item 9"),
-            GridItem(R.drawable.men ,"Item 10"),
-            GridItem(R.drawable.men ,"Item 11"),
-            GridItem(R.drawable.men ,"Item 12"),
-            GridItem(R.drawable.men ,"Item 13"),
+            GridItem(R.drawable.men, "Item 1"),
+            GridItem(R.drawable.men, "Item 2"),
+            GridItem(R.drawable.men, "Item 3"),
+            GridItem(R.drawable.men, "Item 5"),
+            GridItem(R.drawable.men, "Item 6"),
+            GridItem(R.drawable.men, "Item 7"),
+            GridItem(R.drawable.men, "Item 8"),
+            GridItem(R.drawable.men, "Item 9"),
+            GridItem(R.drawable.men, "Item 10"),
+            GridItem(R.drawable.men, "Item 11"),
+            GridItem(R.drawable.men, "Item 12"),
+            GridItem(R.drawable.men, "Item 13"),
             // Add more items as needed
         )
 

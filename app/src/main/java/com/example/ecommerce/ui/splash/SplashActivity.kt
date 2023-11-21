@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.ecommerce.R
 import com.example.ecommerce.ui.home.HomeActivity
+import com.example.ecommerce.ui.home.tabs.profile.ProfileFragment
 import com.example.ecommerce.ui.login.LoginActivity
 import com.example.ecommerce.ui.register.RegisterActivity
 
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
     private fun startHomeActivity() {
         Handler(Looper.getMainLooper())
             .postDelayed({
-                val intent = Intent(this, RegisterActivity::class.java)
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }, 1000)
     }

@@ -7,4 +7,6 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="grey">#808080</color>
     <color name="product_name_color">#06004F</color>
+    <color name="edit_text_profile_color">#06004F</color>
+    <color name="edit_text_profile_second_color">#9906004F</color>
 </resources>

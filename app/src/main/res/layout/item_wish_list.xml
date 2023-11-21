@@ -56,15 +56,25 @@
                 app:layout_constraintStart_toEndOf="@id/product_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/icon_wish_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_wish_listed"
+                app:cardCornerRadius="200dp"
+                app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="-8dp"
+                    android:src="@drawable/ic_wish_listed" />
+
+            </androidx.cardview.widget.CardView>
+
 
             <ImageView
                 android:id="@+id/icon_product_color"
@@ -99,7 +109,7 @@
                 android:text="@string/egp_1_200"
                 android:textAlignment="center"
                 android:textColor="#06004F"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/product_image"
@@ -109,16 +119,15 @@
                 android:id="@+id/product_discount_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="serif"
                 android:text="@string/egp_1_500"
                 android:textAlignment="center"
                 android:textColor="#9906004F"
-                android:textSize="8sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/product_price"
-                app:layout_constraintTop_toBottomOf="@id/product_color"
-                tools:ignore="SmallSp" />
+                app:layout_constraintTop_toBottomOf="@id/product_color" />
 
             <View
                 android:layout_width="0dp"
@@ -133,11 +142,10 @@
                 android:id="@+id/button_add_to_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginStart="10dp"
                 android:paddingHorizontal="16dp"
                 android:text="@string/add_to_cart"
                 android:textAllCaps="false"
+
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:cornerRadius="16dp"

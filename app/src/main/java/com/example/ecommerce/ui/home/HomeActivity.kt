@@ -1,9 +1,8 @@
 package com.example.ecommerce.ui.home
 
-import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.ActivityHomeBinding
@@ -39,6 +38,7 @@ class HomeActivity : AppCompatActivity() {
 
                 R.id.nav_profile -> {
                     showTabFragment(ProfileFragment())
+
                 }
             }
             true
@@ -50,6 +50,19 @@ class HomeActivity : AppCompatActivity() {
     private fun showTabFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
-            .commit()
+            .commitNow()
+
+        when (fragment) {
+            is HomeFragment, is CategoriesFragment, is WishListFragment -> {
+                viewBinding.search.visibility = View.VISIBLE
+                viewBinding.cardAndSearchViews.visibility = View.VISIBLE
+            }
+
+            is ProfileFragment -> {
+                viewBinding.search.visibility = View.GONE
+                viewBinding.cardAndSearchViews.visibility = View.GONE
+            }
+        }
     }
+
 }
