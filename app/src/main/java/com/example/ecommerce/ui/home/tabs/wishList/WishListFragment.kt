@@ -14,7 +14,7 @@ class WishListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewBinding = FragmentWishListBinding.inflate(inflater, container, false)
 
         val wishListItems = listOf(

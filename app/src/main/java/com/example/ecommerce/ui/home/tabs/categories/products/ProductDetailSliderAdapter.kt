@@ -1,4 +1,4 @@
-package com.example.ecommerce.ui.home.tabs.home
+package com.example.ecommerce.ui.home.tabs.categories.products
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,12 +10,12 @@ import com.smarteist.autoimageslider.SliderViewAdapter
 
 // on below line we are creating a class for slider
 // adapter and passing our array list to it.
-class SliderAdapter(imageUrl: ArrayList<String>) :
-    SliderViewAdapter<SliderAdapter.SliderViewHolder>() {
+class ProductDetailSliderAdapter(imageUrl: List<String>) :
+    SliderViewAdapter<ProductDetailSliderAdapter.SliderViewHolder>() {
 
     // on below line we are creating a
     // new array list and initializing it.
-    private var sliderList: ArrayList<String> = imageUrl
+    private var sliderList: List<String> = imageUrl
 
     // on below line we are calling get method
     override fun getCount(): Int {
@@ -28,7 +28,8 @@ class SliderAdapter(imageUrl: ArrayList<String>) :
     override fun onCreateViewHolder(parent: ViewGroup?): SliderViewHolder {
         // inside this method we are inflating our layout file for our slider view.
         val inflate: View =
-            LayoutInflater.from(parent!!.context).inflate(R.layout.item_slider, parent, false)
+            LayoutInflater.from(parent!!.context)
+                .inflate(R.layout.item_slider_product_detail, parent, false)
 
         // on below line we are simply passing
         // the view to our slider view holder.
@@ -53,6 +54,6 @@ class SliderAdapter(imageUrl: ArrayList<String>) :
         // on below line we are creating a variable for our
         // image view and initializing it with image id.
 
-        var imageView: ImageView = itemView!!.findViewById(R.id.slider_image)
+        var imageView: ImageView = itemView!!.findViewById(R.id.slider_product_detail_image)
     }
 }

@@ -21,9 +21,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="8dp"
             android:text="@string/welcome_mohammad"
-            android:textColor="@color/edit_text_profile_color"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            style="@style/text_view_style"
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,7 +30,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="24dp"
             android:text="mohamedashrf155@gmail.com"
-            android:textColor="@color/edit_text_profile_second_color"
+            android:textColor="@color/emailColor"
             android:textSize="14sp"
             tools:text="mohamedashrf155@gmail.com" />
 
@@ -43,9 +42,8 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="monospace"
             android:text="@string/full_name"
-            android:textColor="@color/edit_text_profile_color"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            style="@style/text_view_style" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/text_input_style"
@@ -85,9 +83,8 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="monospace"
             android:text="@string/email"
-            android:textColor="@color/edit_text_profile_color"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            style="@style/text_view_style"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/text_input_style"
@@ -127,9 +124,8 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="monospace"
             android:text="@string/password"
-            android:textColor="@color/edit_text_profile_color"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            style="@style/text_view_style"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/text_input_profile_style"
@@ -166,9 +162,8 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="monospace"
             android:text="@string/mobile_number"
-            android:textColor="@color/edit_text_profile_color"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            style="@style/text_view_style"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/text_input_style"
@@ -205,9 +200,8 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="monospace"
             android:text="@string/address"
-            android:textColor="@color/edit_text_profile_color"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            style="@style/text_view_style"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/text_input_style"

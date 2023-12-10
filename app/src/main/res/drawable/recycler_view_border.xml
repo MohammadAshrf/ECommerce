@@ -1,10 +1,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/white" />
-
     <!-- Set stroke width to 0dp or remove the stroke to remove the border -->
     <stroke
         android:width="0dp"
         android:color="@color/black" />
-
     <corners android:topLeftRadius="16dp" />
 </shape>

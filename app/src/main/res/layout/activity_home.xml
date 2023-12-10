@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                     app:iconifiedByDefault="false"
                     app:queryBackground="@color/transparent" />
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <ImageView
                 android:id="@+id/cart"
@@ -81,7 +81,6 @@
         android:background="@drawable/nav_background_curved"
         app:itemActiveIndicatorStyle="@null"
         app:itemIconSize="25dp"
-
         app:menu="@menu/home_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -36,4 +36,13 @@
     <string name="enter_your_address">Enter your address</string>
     <string name="welcome_mohammad">Welcome, Mohammad</string>
     <string name="men_s_fashion">Men\'s Fashion</string>
+    <string name="suits">Suits</string>
+    <string name="products_details">Products Details</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">Description</string>
+    <string name="size">Size</string>
+    <string name="review">Review</string>
+    <string name="color">Color</string>
+    <string name="total_price">Total price</string>
 </resources>

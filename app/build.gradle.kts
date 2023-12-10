@@ -46,10 +46,13 @@ dependencies {
     implementation(project(mapOf("path" to ":data")))
     implementation(project(mapOf("path" to ":domain")))
     testImplementation("junit:junit:4.13.2")
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
-    implementation ("com.github.smarteist:autoimageslider:1.4.0")
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.5")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.7.5")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    //glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    //slider
+    implementation("com.github.smarteist:autoimageslider:1.4.0")
+    //navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
 }

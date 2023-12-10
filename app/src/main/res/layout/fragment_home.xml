@@ -9,10 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <!-- The content you want to make scrollable goes here -->
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/slider_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/slider_img"
+                android:id="@+id/slider_home_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 app:sliderAnimationDuration="600"
@@ -41,7 +40,7 @@
                 app:sliderStartAutoCycle="true"
                 tools:background="@drawable/unsplash" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/categories_text"

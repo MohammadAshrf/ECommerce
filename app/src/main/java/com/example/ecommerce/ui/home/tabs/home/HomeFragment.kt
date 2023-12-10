@@ -14,13 +14,13 @@ class HomeFragment : Fragment() {
     private lateinit var viewBinding: FragmentHomeBinding
 
     // on below line we are creating a variable for our array list for storing our images.
-    private lateinit var imageUrl: ArrayList<String>
+    private lateinit var imageUrl: List<String>
 
     // on below line we are creating a variable for our slider view.
     private lateinit var sliderView: SliderView
 
     // on below line we are creating a variable for our slider adapter.
-    private lateinit var sliderAdapter: SliderAdapter
+    private lateinit var sliderAdapter: HomeSliderAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
 
         // on below line we are initializing our slier view.
-        sliderView = viewBinding.sliderImg
+        sliderView = viewBinding.sliderHomeImage
 
         // on below line we are initializing
         // our image url array list.
@@ -38,15 +38,15 @@ class HomeFragment : Fragment() {
 
         // on below line we are adding data to our image url array list.
         imageUrl =
-            (imageUrl + "https://i.ibb.co/gFpXYXz/8qd1CHFq.png") as ArrayList<String>
+            (imageUrl + "https://i.ibb.co/gFpXYXz/8qd1CHFq.png")
         imageUrl =
-            (imageUrl + "https://i.ibb.co/H2QJKrM/dewGXctU.jpg") as ArrayList<String>
+            (imageUrl + "https://i.ibb.co/H2QJKrM/dewGXctU.jpg")
         imageUrl =
-            (imageUrl + "https://i.ibb.co/TBcsPth/yrnp7GBp.jpg") as ArrayList<String>
+            (imageUrl + "https://i.ibb.co/TBcsPth/yrnp7GBp.jpg")
 
         // on below line we are initializing our
         // slider adapter and adding our list to it.
-        sliderAdapter = SliderAdapter(imageUrl)
+        sliderAdapter = HomeSliderAdapter(imageUrl)
 
         // on below line we are setting auto cycle direction
         // for our slider view from left to right.

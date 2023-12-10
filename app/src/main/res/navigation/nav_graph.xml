@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/categoryGridFragment">
+
+    <fragment
+        android:id="@+id/categoryGridFragment"
+        android:name="com.example.ecommerce.ui.home.tabs.categories.CategoriesFragment"
+        android:label="Category Grid Fragment">
+        <action
+            android:id="@+id/action_categoryGridFragment_to_categoryDetailsFragment"
+            app:destination="@id/categoryDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryDetailsFragment"
+        android:name="com.example.ecommerce.ui.home.tabs.categories.CategoryDetailsFragment"
+        android:label="Category Details Fragment"></fragment>
+
+</navigation>
