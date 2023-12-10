@@ -19,71 +19,41 @@ class WishListFragment : Fragment() {
 
         val wishListItems = listOf(
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
             WishListItem(
-                R.drawable.product_wish_list, "GUESS Women's",
-                R.drawable.ic_wish_listed, R.drawable.icon_product_color, "Gold Watch",
-                "EGP 1.200", "EGP 1.500"
+                R.drawable.product_img, "GUESS Women's"
             ),
-
+            WishListItem(
+                R.drawable.product_img, "GUESS Women's"
+            ),
 
             )
 

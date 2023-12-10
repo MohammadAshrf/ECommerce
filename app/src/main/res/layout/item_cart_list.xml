@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="8dp"
-        app:cardElevation="1dp"
         app:cardCornerRadius="20dp"
+        app:cardElevation="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,13 +41,13 @@
 
             <TextView
                 android:id="@+id/product_name"
+                style="@style/text_view_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                style="@style/text_view_style"
+                android:text="Nike Air Jordan"
                 android:textAlignment="center"
-                android:text="@string/guess_women_s"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@id/product_image"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -59,15 +59,16 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
                 app:cardCornerRadius="200dp"
-                app:cardElevation="8dp"
+                app:cardElevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/ic_cart_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:scaleType="center"
-                    android:src="@drawable/ic_wish_listed" />
+                    android:src="@drawable/ic_delete" />
 
             </androidx.cardview.widget.CardView>
 
@@ -88,61 +89,75 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="@color/textPrimary"
+                android:text="Orange"
                 android:textAlignment="center"
-                android:text="@string/gold_watch"
+                android:textColor="@color/grey"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/icon_product_color"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <View
+                android:id="@+id/line_view"
+                android:layout_width="1dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="2dp"
+                android:background="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/product_color"
+                app:layout_constraintStart_toEndOf="@id/product_color"
+                app:layout_constraintTop_toTopOf="@id/product_color" />
+
+            <TextView
+                android:id="@+id/product_size_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/product_size"
+                android:textAlignment="center"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/line_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 40"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@+id/product_size_text"
+                app:layout_constraintStart_toEndOf="@+id/product_size_text"
+                app:layout_constraintTop_toTopOf="@+id/product_size_text" />
+
             <TextView
                 android:id="@+id/product_price"
+                style="@style/text_view_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="serif"
-                style="@style/text_view_style"
-                android:textAlignment="center"
                 android:text="@string/egp_1_200"
+                android:textAlignment="center"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/product_image"
                 app:layout_constraintTop_toBottomOf="@+id/icon_product_color" />
 
-            <TextView
-                android:id="@+id/product_discount_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="serif"
-                android:text="@string/egp_1_500"
-                android:textAlignment="center"
-                android:textColor="#9906004F"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/product_price"
-                app:layout_constraintTop_toBottomOf="@id/product_color" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height=".7dp"
-                android:background="@color/grey"
-                app:layout_constraintBottom_toBottomOf="@id/product_discount_price"
-                app:layout_constraintEnd_toEndOf="@id/product_discount_price"
-                app:layout_constraintStart_toStartOf="@id/product_discount_price"
-                app:layout_constraintTop_toTopOf="@id/product_discount_price" />
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_add_to_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_minus"
+                android:drawableRight="@drawable/ic_plus"
+                android:fontFamily="serif-monospace"
                 android:paddingHorizontal="16dp"
-                android:text="@string/add_to_cart"
+                android:text="1"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:cornerRadius="16dp"
+                app:iconPadding="14dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/icon_wish_list"
 
