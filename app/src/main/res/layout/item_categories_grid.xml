@@ -10,7 +10,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/category_grid_image"
+        android:id="@+id/category_grid_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="50dp"
@@ -20,11 +20,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:id="@+id/categoryIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
             android:scaleType="center"
-            android:src="@drawable/men" />
+            tools:src="@drawable/men" />
 
     </androidx.cardview.widget.CardView>
 
@@ -36,6 +37,6 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/category_grid_image" />
+        app:layout_constraintTop_toBottomOf="@id/category_grid_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

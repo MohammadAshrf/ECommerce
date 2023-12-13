@@ -2,13 +2,8 @@ package com.example.ecommerce.ui.home.tabs.categories.products
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ecommerce.R
 import com.example.ecommerce.databinding.ActivityProductDetailBinding
-import com.example.ecommerce.ui.home.tabs.home.CategoryGridAdapter
-import com.example.ecommerce.ui.home.tabs.home.GridItem
-import com.example.ecommerce.ui.home.tabs.home.HomeAppGridAdapter
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
