@@ -1,2 +1,2 @@
 # ECommerce
-E-Commerce app under development
+E-commerce app with Clean Architecture (under development)
