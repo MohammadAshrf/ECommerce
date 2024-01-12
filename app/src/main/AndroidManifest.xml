@@ -20,7 +20,7 @@
             android:name=".ui.home.tabs.categories.cart.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.tabs.categories.products.ProductDetailActivity"
+            android:name=".ui.home.tabs.categories.productDetails.ProductDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"

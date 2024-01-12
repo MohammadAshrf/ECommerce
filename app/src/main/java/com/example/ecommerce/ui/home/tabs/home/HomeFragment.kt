@@ -6,20 +6,48 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.example.domain.entity.category.Data
 import com.example.ecommerce.databinding.FragmentHomeBinding
+import com.example.ecommerce.databinding.ItemCategoriesGridBinding
+import com.example.ecommerce.ui.home.tabs.home.category.HomeCategoryGridAdapter
+import com.example.ecommerce.ui.home.tabs.home.category.HomeCategoryViewModel
+import com.example.ecommerce.ui.home.tabs.home.electronics.ElectronicsGridAdapter
+import com.example.ecommerce.ui.home.tabs.home.electronics.ElectronicsViewModel
+import com.example.ecommerce.ui.home.tabs.home.men.MensGridAdapter
+import com.example.ecommerce.ui.home.tabs.home.men.MensViewModel
+import com.example.ecommerce.ui.home.tabs.home.woman.WomanShawlGridAdapter
+import com.example.ecommerce.ui.home.tabs.home.woman.WomanShawlViewModel
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.smarteist.autoimageslider.SliderView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
-    private lateinit var viewBinding: FragmentHomeBinding
+    private var _viewBinding: FragmentHomeBinding? = null
+    private lateinit var homeCategoryViewModel: HomeCategoryViewModel
+    private lateinit var homeWomanShawlViewModel: WomanShawlViewModel
+    private lateinit var homeMensViewModel: MensViewModel
+    private lateinit var homeElectronicsViewModel: ElectronicsViewModel
+
+    private lateinit var catBinding: ItemCategoriesGridBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        homeCategoryViewModel = ViewModelProvider(this)[HomeCategoryViewModel::class.java]
+        homeWomanShawlViewModel = ViewModelProvider(this)[WomanShawlViewModel::class.java]
+        homeMensViewModel = ViewModelProvider(this)[MensViewModel::class.java]
+        homeElectronicsViewModel = ViewModelProvider(this)[ElectronicsViewModel::class.java]
+    }
+
+    private val binding get() = _viewBinding!!
+
+    private lateinit var shimmerCategories: ShimmerFrameLayout
+    private lateinit var shimmerWoman: ShimmerFrameLayout
+
 
     // on below line we are creating a variable for our array list for storing our images.
-    private lateinit var imageUrl: List<Data>
+    private lateinit var imageUrl: List<String>
 
     // on below line we are creating a variable for our slider view.
     private lateinit var sliderView: SliderView
@@ -27,33 +55,44 @@ class HomeFragment : Fragment() {
     // on below line we are creating a variable for our slider adapter.
     private lateinit var sliderAdapter: HomeSliderAdapter
 
-    private lateinit var item: Data
 
-    private val homeCategoryViewModel: HomeCategoryViewModel by viewModels()
-    private val homeApplianceViewModel: HomeApplianceViewModel by viewModels()
+//    private val homeCategoryViewModel: HomeCategoryViewModel by viewModels()
+//    private val homeWomanShawlViewModel: WomanShawlViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        _viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        catBinding = ItemCategoriesGridBinding.inflate(inflater, container, false)
+
+        //shimmer
+//        shimmerSlider = viewBinding.shimmerSliderLayout
+        shimmerCategories = catBinding.shimmerCategoriesLayout
+        shimmerWoman = binding.shimmerWomanLayout
+
+        // Initially start the shimmer effect
+//        shimmerSlider.startShimmer()
+        shimmerCategories.startShimmer()
+        shimmerWoman.startShimmer()
 
         // on below line we are initializing our slier view.
-        sliderView = viewBinding.sliderHomeImage
+        sliderView = binding.sliderHomeImage
 
         // on below line we are initializing
         // our image url array list.
-        imageUrl = listOf()
+        imageUrl = ArrayList()
 
 
-        // on below line we are adding data to our image url array list.
-//        imageUrl =
-//            ((imageUrl + Glide.with(viewBinding.root.context).load(item.image).into(viewBinding.sliderHomeImage)).toString())
-//        imageUrl =
-//            (imageUrl + "https://i.ibb.co/H2QJKrM/dewGXctU.jpg")
-//        imageUrl =
-//            (imageUrl + "https://i.ibb.co/TBcsPth/yrnp7GBp.jpg")
+        //  on below line we are adding data to our image url array list.
+        imageUrl =
+            (imageUrl + "https://i.ibb.co/gFpXYXz/8qd1CHFq.png")
+        imageUrl =
+            (imageUrl + "https://i.ibb.co/H2QJKrM/dewGXctU.jpg")
+        imageUrl =
+            (imageUrl + "https://i.ibb.co/TBcsPth/yrnp7GBp.jpg")
 
         // on below line we are initializing our
         // slider adapter and adding our list to it.
@@ -79,27 +118,67 @@ class HomeFragment : Fragment() {
         sliderView.startAutoCycle()
 
 
-        homeCategoryViewModel.getCategories()
-        homeApplianceViewModel.getAppliance()
         val homeCategoryAdapter = HomeCategoryGridAdapter()
-        val homeAppGridAdapter = HomeAppGridAdapter()
+        val homeWomanShawlGridAdapter = WomanShawlGridAdapter()
+        val homeTShirtsGridAdapter = MensGridAdapter()
+        val homeElectronicsGridAdapter = ElectronicsGridAdapter()
+        binding.rvWomanShawl.adapter = homeWomanShawlGridAdapter
+        binding.rvCategories.adapter = homeCategoryAdapter
+        binding.rvMens.adapter = homeTShirtsGridAdapter
+        binding.rvElectronics.adapter = homeElectronicsGridAdapter
+
+        //categories
         lifecycleScope.launch {
             launch {
-                homeCategoryViewModel.categories.collect {
+                homeCategoryViewModel.homeCategories.collect {
                     Log.e("TAG", "onCreateView: $it")
-                    homeCategoryAdapter.submitList(it?.data)
+                    homeCategoryAdapter.submitList(it)
+//                    shimmerCategories.stopShimmer()
+//                    shimmerCategories.visibility = View.GONE
                 }
             }
+            //Woman Shawl
             launch {
-                homeApplianceViewModel.appliance.collect {
+                homeWomanShawlViewModel.womanShawlProducts.collect {
                     Log.e("TAG123", "onCreateView123: $it")
-                    homeAppGridAdapter.submitList(it?.data)
+                    homeWomanShawlGridAdapter.submitList(it)
+//                    shimmerCategories.stopShimmer()
+//                    shimmerCategories.visibility = View.GONE
+                }
+            }
+
+            //Mens
+            launch {
+                homeMensViewModel.mensProducts.collect { mensProducts ->
+                    Log.e("TAG1234", "onCreateView1234: $mensProducts")
+                    homeTShirtsGridAdapter.submitList(mensProducts)
+                }
+            }
+
+            //Electronics
+            launch {
+                homeElectronicsViewModel.electronicProducts.collect { electronicProducts ->
+                    Log.e("TAG12345", "onCreateView12345: $electronicProducts")
+                    homeElectronicsGridAdapter.submitList(electronicProducts)
                 }
             }
         }
 
-        viewBinding.rvHomeAppliance.adapter = homeAppGridAdapter
-        viewBinding.rvCategories.adapter = homeCategoryAdapter
-        return viewBinding.root
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        homeCategoryViewModel.getHomeCategories()
+        homeWomanShawlViewModel.getWomanShawlProducts()
+        homeMensViewModel.getMensProducts()
+        homeElectronicsViewModel.getElectronicProducts()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _viewBinding = null
     }
 }

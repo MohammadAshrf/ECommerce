@@ -8,7 +8,7 @@
     <string name="categories_text">Categories</string>
     <string name="view_all">view all</string>
     <string name="men_fashion">Men\'s</string>
-    <string name="home_appliance">Home Appliance</string>
+    <string name="women_s_fashion">Women\'s Fashion</string>
     <string name="clothes">Clothes</string>
     <string name="full_name">Full Name</string>
     <string name="enter_your_full_name">Enter your full name</string>
@@ -48,4 +48,8 @@
     <string name="cart">Cart</string>
     <string name="check_out">Check Out</string>
     <string name="product_size">Size: </string>
+    <string name="egp">EGP</string>
+    <string name="banner">banner</string>
+    <string name="electronics">Electronics</string>
+    <string name="mens_fashion">Men\'s Fashion</string>
 </resources>

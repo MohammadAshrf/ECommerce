@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.tabs.categories.products.ProductDetailActivity">
+    tools:context=".ui.home.tabs.categories.productDetails.ProductDetailsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -191,7 +191,9 @@
         android:id="@+id/description_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nike is a multinational corporation that designs,
+        android:ellipsize="end"
+        android:maxLines="3"
+        tools:text="Nike is a multinational corporation that designs,
         develops, and sells athletic footwear ,apparel, and
         accessories......Read More"
         android:textColor="@color/grey"

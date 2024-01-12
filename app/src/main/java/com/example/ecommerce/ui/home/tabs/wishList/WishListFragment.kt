@@ -60,9 +60,6 @@ class WishListFragment : Fragment() {
         val wishListAdapter = WishListAdapter(wishListItems)
         viewBinding.rvWishList.adapter = wishListAdapter
 
-
-
-
         return viewBinding.root
     }
 }

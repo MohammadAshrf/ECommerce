@@ -8,11 +8,22 @@
     android:orientation="horizontal"
     tools:context=".ui.home.HomeActivity">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerCategoriesLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/category_grid_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/category_grid_card"
+        app:layout_constraintTop_toTopOf="@+id/category_grid_card"
+        app:shimmer_duration="1000">
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/category_grid_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:cardCornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +32,8 @@
 
         <ImageView
             android:id="@+id/categoryIv"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="center"
             tools:src="@drawable/men" />
@@ -33,7 +44,8 @@
         android:id="@+id/category_grid_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/men_fashion"
+        android:textStyle="bold"
+        tools:text="@string/men_fashion"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

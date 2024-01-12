@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/categoryDetailsFragment"
-        android:name="com.example.ecommerce.ui.home.tabs.categories.CategoryDetailsFragment"
+        android:name="com.example.ecommerce.ui.home.tabs.categories.categoryDetails.CategoryDetailsFragment"
         android:label="Category Details Fragment"></fragment>
 
 </navigation>

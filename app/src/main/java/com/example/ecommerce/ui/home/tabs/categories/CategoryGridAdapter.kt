@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ecommerce.databinding.ItemCategoryGridBinding
 
-class CategoryGridAdapter(private val items: List<CategoryItem>) :
+class CategoryGridAdapter(private val items: List<CategoryListDemo>) :
     RecyclerView.Adapter<CategoryGridAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: ItemCategoryGridBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: CategoryItem) {
+        fun bind(item: CategoryListDemo) {
             binding.categoryText.text = item.text
 
         }

@@ -4,11 +4,14 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.domain.features.category.model.Category
 import com.example.ecommerce.databinding.ItemCategoryListBinding
 
-class CategoryListAdapter(private val items: List<CategoryItem>) :
-    RecyclerView.Adapter<CategoryListAdapter.ViewHolder>() {
+class CategoryListAdapter : ListAdapter<Category, CategoryListAdapter.ViewHolder>
+    (CategoryListDiffCallBack()) {
 
 //    private var selectedPosition = -1
 //    private var selectedItemChanged = false
@@ -23,19 +26,60 @@ class CategoryListAdapter(private val items: List<CategoryItem>) :
             }
         }
 
-        fun bind(item: CategoryItem) {
-            binding.itemCategoryText.text = item.text
+        fun bind(item: Category) {
+            binding.itemCategoryText.text = item.name
 
             // Set visibility based on the selected state
-            binding.reqCategoryList.visibility = if (item.isSelected) View.VISIBLE else View.GONE
+            binding.reqCategoryList.visibility =
+                if (item.name == item.id) View.VISIBLE else View.GONE
 
             // Update background color for selected item
             val backgroundColor =
-                if (item.isSelected) Color.WHITE else Color.TRANSPARENT
+                if (item.name == item.id) Color.WHITE else Color.TRANSPARENT
             binding.root.setBackgroundColor(backgroundColor)
         }
     }
 
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding =
+            ItemCategoryListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
+
+//    override fun getItemCount(): Int {
+//        return items.size
+//    }
+
+    private fun updateSelection(selectedPosition: Int) {
+        for (index in getItem(selectedPosition).id.toString()) {
+            val item = getItem(selectedPosition)
+            item.id = ((index.code == selectedPosition).toString())
+        }
+        notifyDataSetChanged()
+    }
+
+    class CategoryListDiffCallBack :
+        DiffUtil.ItemCallback<Category>() {
+        override fun areItemsTheSame(
+            oldItem: Category,
+            newItem: Category
+        ): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(
+            oldItem: Category,
+            newItem: Category
+        ): Boolean {
+            return oldItem == newItem
+        }
+    }
+}
     /*******Bard Opinion*******/
 
     /**           val isSelected = selectedPosition == adapterPosition
@@ -59,26 +103,3 @@ class CategoryListAdapter(private val items: List<CategoryItem>) :
     //                }
     //        }
      **/
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding =
-            ItemCategoryListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
-    }
-
-    override fun getItemCount(): Int {
-        return items.size
-    }
-
-    private fun updateSelection(selectedPosition: Int) {
-        for (index in items.indices) {
-            val item = items[index]
-            item.isSelected = (index == selectedPosition)
-        }
-        notifyDataSetChanged()
-    }
-}

@@ -5,18 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.example.domain.entity.category.Data
 import com.example.ecommerce.R
 import com.smarteist.autoimageslider.SliderViewAdapter
 
 // on below line we are creating a class for slider
 // adapter and passing our array list to it.
-class HomeSliderAdapter(imageUrl: List<Data>) :
+class HomeSliderAdapter(imageUrl: List<String>) :
     SliderViewAdapter<HomeSliderAdapter.SliderViewHolder>() {
 
     // on below line we are creating a
     // new array list and initializing it.
-    private var sliderList: List<Data> = imageUrl
+    private var sliderList: List<String> = imageUrl
 
     // on below line we are calling get method
     override fun getCount(): Int {

@@ -1,10 +1,10 @@
 package com.example.ecommerce.ui.home
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.ColorRes
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.ActivityHomeBinding
@@ -12,18 +12,20 @@ import com.example.ecommerce.ui.home.tabs.categories.CategoriesFragment
 import com.example.ecommerce.ui.home.tabs.home.HomeFragment
 import com.example.ecommerce.ui.home.tabs.profile.ProfileFragment
 import com.example.ecommerce.ui.home.tabs.wishList.WishListFragment
-import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
+
     private lateinit var viewBinding: ActivityHomeBinding
+    val viewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding = ActivityHomeBinding.inflate(layoutInflater)
-        val view = viewBinding.root
-        setContentView(view)
+//        viewBinding = ActivityHomeBinding.inflate(layoutInflater)
+//        val view = viewBinding.root
+//        setContentView(view)
+        viewBinding = DataBindingUtil.setContentView(this, R.layout.activity_home)
 
         viewBinding.bottomNav.itemIconTintList = null
 
