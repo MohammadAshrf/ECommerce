@@ -16,7 +16,7 @@ class HomeCategoryViewModel @Inject constructor(
     private val homeCategoriesUseCase: GetCategoriesUseCase
 ) : ViewModel() {
 
-    private val _homeCategories: MutableStateFlow<List<Category?>?> = MutableStateFlow(null)
+    private val _homeCategories: MutableStateFlow<List<Category?>?> = MutableStateFlow(emptyList())
     val homeCategories: StateFlow<List<Category?>?> = _homeCategories
 
     fun getHomeCategories() {

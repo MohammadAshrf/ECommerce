@@ -1,11 +1,9 @@
 package com.example.data.model.product
 
 import com.example.domain.features.category.model.Category
-import com.example.domain.features.electronicsProduct.model.ElectronicProducts
-import com.example.domain.features.mensProduct.model.MensProduct
+import com.example.domain.features.product.model.Product
 import com.example.domain.features.subCategories.model.Brand
-import com.example.domain.features.subCategories.model.SubCategories
-import com.example.domain.features.womenProduct.model.WomanProduct
+import com.example.domain.features.subCategories.model.SubCategory
 import com.google.gson.annotations.SerializedName
 
 data class ProductDto(
@@ -47,7 +45,7 @@ data class ProductDto(
     val id: String? = null,
 
     @field:SerializedName("subcategory")
-    val subcategory: List<SubCategories?>? = null,
+    val subcategory: List<SubCategory?>? = null,
 
     @field:SerializedName("category")
     val category: Category? = null,
@@ -65,24 +63,8 @@ data class ProductDto(
     val priceAfterDiscount: Int? = null
 ) {
 
-    fun toWomanProduct(): WomanProduct {
-        return WomanProduct(
-            sold, images, quantity, imageCover, description, title,
-            ratingsQuantity, ratingsAverage, createdAt, price, id, subcategory,
-            category, brand, slug, updatedAt
-        )
-    }
-
-    fun toMenProduct(): MensProduct {
-        return MensProduct(
-            sold, images, quantity, imageCover, description, title,
-            ratingsQuantity, ratingsAverage, createdAt, price, id, subcategory,
-            category, brand, slug, updatedAt
-        )
-    }
-
-    fun toElectronicsProduct(): ElectronicProducts {
-        return ElectronicProducts(
+    fun toProduct(): Product {
+        return Product(
             sold, images, quantity, imageCover, description, title,
             ratingsQuantity, ratingsAverage, createdAt, price, id, subcategory,
             category, brand, slug, updatedAt

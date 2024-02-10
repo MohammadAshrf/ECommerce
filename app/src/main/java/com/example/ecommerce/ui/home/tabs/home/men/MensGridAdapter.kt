@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.domain.features.mensProduct.model.MensProduct
+import com.example.domain.features.product.model.Product
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.ItemMensGridBinding
 
 class MensGridAdapter :
-    ListAdapter<MensProduct, MensGridAdapter.ViewHolder>(TShirtDiffCallBack()) {
+    ListAdapter<Product, MensGridAdapter.ViewHolder>(TShirtDiffCallBack()) {
 
     inner class ViewHolder(private val binding: ItemMensGridBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: MensProduct) {
+        fun bind(item: Product) {
             Glide.with(binding.root.context).load(item.imageCover).into(binding.mensIv)
             binding.mensText.text = item.title
             binding.productPrice.text =
@@ -40,17 +40,17 @@ class MensGridAdapter :
     }
 
     class TShirtDiffCallBack :
-        DiffUtil.ItemCallback<MensProduct>() {
+        DiffUtil.ItemCallback<Product>() {
         override fun areItemsTheSame(
-            oldItem: MensProduct,
-            newItem: MensProduct
+            oldItem: Product,
+            newItem: Product
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: MensProduct,
-            newItem: MensProduct
+            oldItem: Product,
+            newItem: Product
         ): Boolean {
             return oldItem == newItem
         }

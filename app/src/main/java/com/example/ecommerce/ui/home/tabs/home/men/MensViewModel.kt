@@ -3,8 +3,8 @@ package com.example.ecommerce.ui.home.tabs.home.men
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.features.mensProduct.model.MensProduct
-import com.example.domain.features.mensProduct.usecase.GetMensProductsUseCase
+import com.example.domain.features.product.model.Product
+import com.example.domain.features.product.usecase.GetProductsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -14,11 +14,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MensViewModel @Inject constructor(
-    private val mensProductsUseCase: GetMensProductsUseCase,
+    private val mensProductsUseCase: GetProductsUseCase,
 ) : ViewModel() {
 
-    private val _mensProducts: MutableStateFlow<List<MensProduct?>?> = MutableStateFlow(null)
-    val mensProducts: StateFlow<List<MensProduct?>?> = _mensProducts
+    private val _mensProducts: MutableStateFlow<List<Product?>?> = MutableStateFlow(emptyList())
+    val mensProducts: StateFlow<List<Product?>?> = _mensProducts
 
     fun getMensProducts() {
         viewModelScope.launch {

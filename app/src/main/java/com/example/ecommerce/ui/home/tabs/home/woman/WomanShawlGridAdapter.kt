@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.domain.features.womenProduct.model.WomanProduct
+import com.example.domain.features.product.model.Product
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.ItemWomanShawlGridBinding
 
 class WomanShawlGridAdapter :
-    ListAdapter<WomanProduct, WomanShawlGridAdapter.ViewHolder>(WomanShawlDiffCallBack()) {
+    ListAdapter<Product, WomanShawlGridAdapter.ViewHolder>(WomanShawlDiffCallBack()) {
 
     inner class ViewHolder(private val binding: ItemWomanShawlGridBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: WomanProduct) {
+        fun bind(item: Product) {
             Glide.with(binding.root.context).load(item.imageCover).into(binding.womanShawlIv)
             binding.womanShawlText.text = item.title
             binding.productPrice.text =
@@ -40,17 +40,17 @@ class WomanShawlGridAdapter :
     }
 
     class WomanShawlDiffCallBack :
-        DiffUtil.ItemCallback<WomanProduct>() {
+        DiffUtil.ItemCallback<Product>() {
         override fun areItemsTheSame(
-            oldItem: WomanProduct,
-            newItem: WomanProduct
+            oldItem: Product,
+            newItem: Product
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: WomanProduct,
-            newItem: WomanProduct
+            oldItem: Product,
+            newItem: Product
         ): Boolean {
             return oldItem == newItem
         }

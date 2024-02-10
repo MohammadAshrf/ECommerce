@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.domain.features.electronicsProduct.model.ElectronicProducts
+import com.example.domain.features.product.model.Product
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.ItemElectronicsGridBinding
 
 class ElectronicsGridAdapter :
-    ListAdapter<ElectronicProducts, ElectronicsGridAdapter.ViewHolder>(ElectronicsDiffCallBack()) {
+    ListAdapter<Product, ElectronicsGridAdapter.ViewHolder>(ElectronicsDiffCallBack()) {
 
     inner class ViewHolder(private val binding: ItemElectronicsGridBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: ElectronicProducts) {
+        fun bind(item: Product) {
             Glide.with(binding.root.context).load(item.imageCover).into(binding.electronicsIv)
             binding.electronicsText.text = item.title
             binding.productPrice.text =
@@ -40,17 +40,17 @@ class ElectronicsGridAdapter :
     }
 
     class ElectronicsDiffCallBack :
-        DiffUtil.ItemCallback<ElectronicProducts>() {
+        DiffUtil.ItemCallback<Product>() {
         override fun areItemsTheSame(
-            oldItem: ElectronicProducts,
-            newItem: ElectronicProducts
+            oldItem: Product,
+            newItem: Product
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: ElectronicProducts,
-            newItem: ElectronicProducts
+            oldItem: Product,
+            newItem: Product
         ): Boolean {
             return oldItem == newItem
         }
